@@ -25,24 +25,21 @@ public class Main {
         while(cases!=0){
             cases--;
             int n=input.nextInt();
-
-            int zeros=mn.FactorialTrailingZero(n);
-
-            System.out.println(zeros);
+            mn.FactorialTrailingZero(n);
         }
     }
 
     //number of zeros = n/5+n/25+...n/m , m=5^i & m < n (i is Positive number)
-    private int FactorialTrailingZero(int n){
+    private void FactorialTrailingZero(int n){
         int i=0;
         int m=5;
 
-        while (m<n){
+        while (m<=n){
             i+=n/m;
-            m=m*5;
+            m*=5;
         }
 
-        return i;
+        System.out.println(i);
     }
 
 }
